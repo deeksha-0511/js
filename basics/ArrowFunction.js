@@ -6,7 +6,7 @@ const user = {
         //console.log(this);
     }
 }
-//user.LoginMag()
+user.LoginMag()
 //user.userName ="rohit"
 //user.LoginMag()
 console.log(this);
