@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello user</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+   const RandamColor = function (){
+    const hx = '0123456789ABCDEF';
+    let color = '#'
+    for (let i = 0; i < 6; i++) {
+        color += hx [Math.floor(Math.random() * 16)];
+        
+    }
+    return color
+   };
+  // console.log(RandamColor())
+
+  let intervalId;
+
+  const startChangingColor = function(){
+    if(!intervalId){
+    intervalId = setInterval(chnageBg, 2000);
+      }
+    function chnageBg() {
+    document.body.style.backgroundColor = RandamColor();
+   }
+ };
+
+ const stopChangingColor = function (){
+
+    clearInterval(intervalId);
+    intervalId = null;
+     
+ };
+
+   document.querySelector('#start').addEventListener('click', startChangingColor);
+
+   document.querySelector('#stop').addEventListener('click', stopChangingColor);
+   
+    /*
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+   const IntervalId = setInterval(sayDate,1000, "wellcome")
+
+   document.querySelector('#stop').addEventListener('click',function(){
+    clearInterval(IntervalId)
+    console.log("stop");
+   })
+
+
+   document.querySelector('#start').addEventListener('click',function(){
+    console.log("start");
+    const IntervalId = setInterval(sayDate,1000, "wellcome")
+   })*/
+  
+
+
+</script>
+</html>
