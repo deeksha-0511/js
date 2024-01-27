@@ -82,10 +82,8 @@ fetch('https://jsonplaceholder.typicode.com/users')
     return response.json()
 })
 .then((data)=>{
-    //console.log(data);
-   return data.name.json()
-}).then((name)=>{
-     
-      console.log(name);
+    console.log(data);
+   
 })
+
 .catch ((er)=>console.log(ERROR))
